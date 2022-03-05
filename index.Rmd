@@ -1,0 +1,131 @@
+---
+title: "COMPLEX NETWORK INTERDEPENDENCE: GAME AND GRAPH THEORY WEBSITE"
+description: |
+  Welcome to the website where we explore data analytics and multi-agent complex Interractions via Network representaion based on graph and game theory with R .I hope you enjoy it!
+  
+site: distill::distill_website
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+
+# Learn more about creating websites with Distill at:
+# https://rstudio.github.io/distill/website.html
+
+```
+
+```{r include=FALSE}
+require(bookdown)
+require(janitor)
+require(igraph)
+require(dplyr)
+require(readr)
+require(ggplot2)
+require(scales)
+require(ggpubr)
+require(tidyr)
+require(kableExtra)
+require(sna)
+require(networkDynamic)
+require(ndtv)
+require(networkR)
+require(networkD3)
+require(network)
+require(mosaic)
+```
+
+<h4 style="text-align:center;" >Dynamical Behavior of scale free network of Agents arriving and deciding whether to play defection <em style="color:red;">D</em> or cooperation <em style="color:yellow;">C</em> based on prisoner Dilemma incentive structure <h4/>
+
+<img src="~/Desktop/TASKFOLDER/MULTIPLENETDATA/frame.gif" style="background-color:powderblue;color:Tomato;width:1200;height=900">
+
+<img src="~/Desktop/TASKFOLDER/MULTIPLENETDATA/R.gif" style="background-color:powderblue;color:Tomato;width:1200;height=900;">
+
+
+```{r, animation.hook='gifski', dev='png', interval=0.2}
+for(i in 1:50){
+par(bg="black")
+plot(rnorm(10,5,1),rnorm(10,5,1),col="gold",col.main="white",main="Animation Hook")
+  }
+```
+
+
+ <img src="~/Desktop/COMPLEX_NETWORK_GAME_THEORY_WEBSITE/RLOGOMIKE.gif" width="1200" height="900" background-color="powderblue">
+
+
+```{r eval=FALSE, fig.height=5, fig.width=6, include=FALSE}
+
+DYNAMIC_INTERRACTIVE_NETWORK_GAME<-function(NETWORK)
+  {
+g<-NETWORK
+h<-g
+wheel<-network.initialize(vcount(g))
+threshold<-mean(igraph::degree(g))
+deg<-igraph::degree(g)
+V(g)$strategy<-rep("C",vcount(g))
+V(g)$strategy[igraph::degree(g)<threshold]<-"D"
+V(g)$name<-V(g)$strategy
+V(g)$color<-ifelse(V(g)$strategy=="C","gold","tomato")
+edge.begin<-ends(g,es=E(g),names=FALSE)[,1]
+edge.col<-V(g)$color[edge.begin]
+wheel %v% "name"<-V(g)$strategy
+add.edges.active(
+  wheel,
+  tail = as.numeric(get.edgelist(h)[,1]),
+  head =as.numeric(get.edgelist(h)[,2]) ,
+  onset = as.numeric(get.edgelist(h)[,1]),
+  terminus=vcount(h)+1
+)
+Anim<-render.d3movie(wheel,
+  plot.par = list(displaylabels = T,bg = "black",
+    vertex.cex=function(slice){1+2*log(sna::degree(slice)*(.2))},
+    vertex.col=V(g)$color,
+    edge.col =edge.col ,
+    label = wheel %v% "name",
+    label.col = "white",
+    label.cex=0.6,
+    main="Barabasi_Albert Network On A Prisner Dilem Game",
+    launchBrowser=FALSE,output.mode ="htmlWidget"
+    
+  )
+)
+return(Anim)
+}
+
+ #DYNAMIC_INTERRACTIVE_NETWORK_GAME(sample_pa(50,1,1))
+ 
+  DYNAMIC_INTERRACTIVE_NETWORK_GAME(make_lattice(c(10,4,2)))
+# DYNAMIC_INTERRACTIVE_NETWORK_GAME(Network1)
+# DYNAMIC_INTERRACTIVE_NETWORK_GAME(Network2)
+```
+
+
+
+
+```{r echo=FALSE, fig.height=15, fig.width=20}
+par(mfrow=c(1,1), bg="black",col.main="white",cex.main=1.5)
+    g<-sample_pa(100,1,1,directed = F)
+    deg<-igraph::degree(g)
+   strategy<-rep(c("C","D"),vcount(g)/2)
+   V(g)$strategy<-sample(rep(c("C","D"),vcount(g)/2))
+   V(g)$name<-V(g)$strategy
+   deg<-igraph::degree(g)
+   vcol<-ifelse(V(g)$name=="C","gold","tomato")
+plot(g,vertex.size=deg*1.35,edge.arrow.size=.2,vertex.label=V(g)$strategy,main="Barabasi-Alber Scale-Free Network where Node is sized by degree with Randomly assigned 50% Node Coordinators and 50% Node Defectors",vertex.label.cex=1.2,vertex.color=vcol,layout=layout_with_kk(g))
+legend(x=-1.7, y=-1.1,c(" RANDOMLY COOPERATE "," RANDOMLY DEFECT "), pch=21 ,col= "#777777" , 
+pt.bg=c("gold","tomato"),pt.cex=2, cex=.8, bty="n",ncol=1,text.col ="white",text.font =3 )
+
+  # V(g)
+   #E(g)
+   # Coordinator<-sum((V(g)$strategy=="C"))
+   # Coordinators
+     #Coordinator
+      # Defectors
+    Defector<-sum(V(g)$strategy=="D")
+    #Defector
+    # Distribution Table By Strategies
+    #table(V(g)$strategy)
+#assortativity.nominal(g,V(g)$strategy,directed = F)
+#assortativity(g,V(g)$payoff,directed =F)
+#assortativity.degree(g,directed=F)
+  
+```

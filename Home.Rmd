@@ -1,0 +1,43 @@
+---
+title: "Adeyinka Falaye"
+image: "MyImage.png"
+links:
+  - label: LinkedIn
+    url: "https://linkedin.com/in/adeyinka-falaye-complex-network-strategic-interraction"
+  - label: Twitter
+    url: "https://twitter.com/"
+  - label: GitHub
+    url: "https://github.com/"
+  - label: Email
+    url: "mailto:email@falayeoutlook.com"
+output:
+  postcards::onofre 
+---
+
+## Bio
+
+Adeyinka  studies complex network systems and the outcome of strategic   engagements and their applications to real world networks not limited social networks but including internet,world wide web,transportation, network,power grid,water distribution network protein-protein interaction and metabolic network . His research focuses on application of game and graph theory in identifying and modelling optimal strategies  in a live world networks where agents in are in a sttate of social conundrum or code sac . He had taught multiple courses in mathematics,statistical computation  and computer programming at the University level.He more often  collaborates with researchers who study machine learning, big data, and cognitive science.His work has been published in many peered review journals including in IEEE.
+
+## Education
+
+**University of Sydney** | Sydney, Australia
+
+
+
+<img src="RLOGOMIKE.gif" width="600" height="600" > 
+
+HDR candidate in Complex Systems Civil Engineering | October 2019 - Present
+
+**The University of Lagos ** | Lagos,Nigeria
+
+M.S. in Computer Science |  2015
+
+**Federal The University of Technology,Minna ** | Minna, Nigeria
+
+B.S. in Mathematics with  Computer Science |  2006
+
+## Experience
+
+**Federal University Of Technology, Minna** | Lecturer | May 2007 - 2019
+
+**University of Sydney** | Complex Group Research team member | PhD Candidate | 2019 - present.

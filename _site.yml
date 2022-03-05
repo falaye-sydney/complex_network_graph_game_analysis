@@ -1,0 +1,12 @@
+name: "."
+title: "Strategic Interaction on Scale Free Networks"
+description: |
+  Strategic Interaction on Scale Free Networks
+output_dir: "_site"
+navbar:
+  right:
+    - text: "Home"
+      href: index.html
+    - text: "About"
+      href: about.html
+output: distill::distill_article

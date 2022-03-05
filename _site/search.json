@@ -1,0 +1,21 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this site",
+      "description": "Some additional details about the website",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-03-05T21:00:27+11:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Strategic Interaction on Scale Free Networks",
+      "description": "Welcome to the website. I hope you enjoy it!\n",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-03-05T21:00:28+11:00"
+    }
+  ],
+  "collections": []
+}
