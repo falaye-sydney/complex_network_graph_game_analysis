@@ -1,6 +1,23 @@
 ---
 title: "COMPLEX NETWORK INTERDEPENDENCE: GAME AND GRAPH THEORY WEBSITE"
-description: |
+descrequire(bookdown)
+require(janitor)
+require(igraph)
+require(dplyr)
+require(readr)
+require(ggplot2)
+require(scales)
+require(ggpubr)
+require(tidyr)
+require(kableExtra)
+require(sna)
+require(networkDynamic)
+require(ndtv)
+require(networkR)
+require(networkD3)
+require(network)
+require(mosaic)
+ription: |
   Welcome to the website where we explore data analytics and multi-agent complex Interractions via Network representaion based on graph and game theory with R .I hope you enjoy it!
   
 site: distill::distill_website
